@@ -217,7 +217,13 @@ fieldset {
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  scroll-behavior: smooth;
+}
+
+.content__list-item:not(:last-child) {
+  margin-bottom: 30px;
 }
 
 /* стилизация scrollbar */
@@ -230,6 +236,7 @@ fieldset {
 .content__list::-webkit-scrollbar-thumb {
   background-color: transparent;
   border-radius: 6px;
+  transition: backgrount-color 0.3s;
 }
 
 .content__list:hover::-webkit-scrollbar-thumb {
@@ -240,16 +247,7 @@ fieldset {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.content__list::-webkit-scrollbar-thumb {
-  transition: backgrount-color 0.3s;
-}
-
 /* для firefix */
-
-.content__list {
-  scrollbar-width: thin;
-  scrollbar-color: transparent transparent;
-}
 
 .content__list:hover {
   scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
@@ -258,14 +256,6 @@ fieldset {
 .content__list:active {
   scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
 }
-
-.content__list {
-  scroll-behavior: smooth;
-}
-
-/* .content__list-item:not(:last-child) {
-  padding-bottom: 26px;
-} */
 
 .content__video-card {
   padding-left: 2px;
@@ -358,7 +348,7 @@ fieldset {
   text-decoration-thickness: 1px;
 }
 
-.content__video-card-description-container:hover {
+.content__card-link:hover {
   text-decoration: underline;
   text-decoration-thickness: 1px;
 }
